@@ -36,6 +36,7 @@ class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
             return super().get_object()
         return self.request.user
 
+@method_decorator(csrf_exempt, name='dispatch')
 class UserProfileView(generics.RetrieveUpdateAPIView):
     """Get or update current user's profile"""
     serializer_class = UserProfileSerializer
@@ -56,13 +57,28 @@ def login_view(request):
         # Create or get token
         token, created = Token.objects.get_or_create(user=user)
         
-        # Create user session
-        UserSession.objects.create(
-            user=user,
-            session_key=request.session.session_key,
-            ip_address=request.META.get('REMOTE_ADDR'),
-            user_agent=request.META.get('HTTP_USER_AGENT', '')
-        )
+        # Create or update user session
+        session_key = request.session.session_key
+        if not session_key:
+            request.session.create()
+            session_key = request.session.session_key
+        
+        # Check if session already exists and update it, or create new one
+        try:
+            user_session = UserSession.objects.get(session_key=session_key)
+            user_session.user = user
+            user_session.ip_address = request.META.get('REMOTE_ADDR')
+            user_session.user_agent = request.META.get('HTTP_USER_AGENT', '')
+            user_session.is_active = True
+            user_session.save()
+        except UserSession.DoesNotExist:
+            UserSession.objects.create(
+                user=user,
+                session_key=session_key,
+                ip_address=request.META.get('REMOTE_ADDR'),
+                user_agent=request.META.get('HTTP_USER_AGENT', ''),
+                is_active=True
+            )
         
         return Response({
             'token': token.key,
