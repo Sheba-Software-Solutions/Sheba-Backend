@@ -32,3 +32,10 @@ class UserSession(models.Model):
     
     def __str__(self):
         return f"{self.user.username} - {self.login_time}"
+    
+    def logout(self):
+        """Mark session as inactive and set logout time"""
+        from django.utils import timezone
+        self.is_active = False
+        self.logout_time = timezone.now()
+        self.save()
