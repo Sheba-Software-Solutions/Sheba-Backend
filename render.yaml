@@ -22,12 +22,8 @@ services:
           name: sheba-db
           property: connectionString
     healthCheckPath: /admin/login/
-    headers:
-      - path: /*
-        name: Strict-Transport-Security
-        value: max-age=31536000; includeSubDomains
-    
-  - type: postgres
-    name: sheba-db
+
+databases:
+  - name: sheba-db
     plan: free
     ipAllowList: []
