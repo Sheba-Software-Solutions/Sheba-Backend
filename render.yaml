@@ -2,6 +2,7 @@ services:
   - type: web
     name: sheba-backend
     env: python
+    pythonVersion: 3.12
     plan: free
     buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
     startCommand: gunicorn sheba_admin_backend.wsgi:application --bind 0.0.0.0:8000
