@@ -6,6 +6,9 @@ from rest_framework.filters import SearchFilter, OrderingFilter
 from .models import Client, ClientContact
 from .serializers import ClientSerializer, ClientContactSerializer, ClientSummarySerializer
 
+import logging
+logger = logging.getLogger(__name__)
+
 class ClientListCreateView(generics.ListCreateAPIView):
     """List all clients or create a new client"""
     queryset = Client.objects.all()
@@ -16,6 +19,16 @@ class ClientListCreateView(generics.ListCreateAPIView):
     search_fields = ['name', 'company', 'email']
     ordering_fields = ['created_at', 'name', 'company']
     ordering = ['-created_at']
+    
+    def create(self, request, *args, **kwargs):
+        logger.info(f"Received client creation request with data: {request.data}")
+        serializer = self.get_serializer(data=request.data)
+        if not serializer.is_valid():
+            logger.error(f"Validation error: {serializer.errors}")
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
 class ClientDetailView(generics.RetrieveUpdateDestroyAPIView):
     """Retrieve, update or delete a client"""
