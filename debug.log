@@ -47,3 +47,93 @@ INFO 2025-09-28 17:01:50,195 basehttp 12627 140124482430656 "GET /api/content/we
 INFO 2025-09-28 17:01:53,981 basehttp 12627 140124482430656 "GET /api/content/services/?ordering=order HTTP/1.1" 200 1192
 INFO 2025-09-28 17:01:57,516 basehttp 12627 140124482430656 "OPTIONS /api/content/team/?ordering=order HTTP/1.1" 200 0
 INFO 2025-09-28 17:01:57,551 basehttp 12627 140124482430656 "GET /api/content/team/?ordering=order HTTP/1.1" 200 1500
+INFO 2025-10-14 23:00:10,558 autoreload 379164 140291116392192 Watching for file changes with StatReloader
+WARNING 2025-10-14 23:12:28,366 log 379164 140290711090880 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-14 23:12:28,371 basehttp 379164 140290711090880 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-14 23:12:28,500 log 379164 140290711090880 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-14 23:12:28,501 basehttp 379164 140290711090880 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-14 23:12:30,608 log 379164 140290711090880 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-14 23:12:30,609 basehttp 379164 140290711090880 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-14 23:12:30,733 log 379164 140290711090880 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-14 23:12:30,735 basehttp 379164 140290711090880 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-14 23:14:15,395 log 379164 140290711090880 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-14 23:14:15,396 basehttp 379164 140290711090880 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-14 23:14:15,402 log 379164 140290702698176 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-14 23:14:15,403 basehttp 379164 140290702698176 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-14 23:14:15,580 log 379164 140290702698176 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-14 23:14:15,581 basehttp 379164 140290702698176 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-14 23:14:15,640 log 379164 140290702698176 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-14 23:14:15,641 basehttp 379164 140290702698176 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-14 23:23:51,607 log 379164 140290702698176 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-14 23:23:51,608 basehttp 379164 140290702698176 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-14 23:23:51,613 log 379164 140290711090880 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-14 23:23:51,613 basehttp 379164 140290711090880 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-14 23:24:01,565 log 379164 140290711090880 Unauthorized: /api/content/blog/
+WARNING 2025-10-14 23:24:01,567 basehttp 379164 140290711090880 "GET /api/content/blog/?status=published&ordering=-published_at HTTP/1.1" 401 58
+WARNING 2025-10-14 23:24:01,571 log 379164 140290702698176 Unauthorized: /api/content/blog/
+WARNING 2025-10-14 23:24:01,574 basehttp 379164 140290702698176 "GET /api/content/blog/?status=published&ordering=-published_at HTTP/1.1" 401 58
+WARNING 2025-10-14 23:39:51,523 log 379164 140290702698176 Unauthorized: /api/content/blog/
+WARNING 2025-10-14 23:39:51,524 basehttp 379164 140290702698176 "GET /api/content/blog/?status=published&ordering=-published_at HTTP/1.1" 401 58
+WARNING 2025-10-14 23:39:51,528 log 379164 140290711090880 Unauthorized: /api/content/blog/
+WARNING 2025-10-14 23:39:51,529 basehttp 379164 140290711090880 "GET /api/content/blog/?status=published&ordering=-published_at HTTP/1.1" 401 58
+WARNING 2025-10-14 23:39:52,260 log 379164 140290711090880 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-14 23:39:52,260 basehttp 379164 140290711090880 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-14 23:39:52,410 log 379164 140290711090880 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-14 23:39:52,411 basehttp 379164 140290711090880 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-15 08:46:06,194 log 379164 140290702698176 Unauthorized: /api/content/blog/
+WARNING 2025-10-15 08:46:06,197 basehttp 379164 140290702698176 "GET /api/content/blog/?status=published&ordering=-published_at HTTP/1.1" 401 58
+WARNING 2025-10-15 08:46:06,202 log 379164 140290711090880 Unauthorized: /api/content/blog/
+WARNING 2025-10-15 08:46:06,203 basehttp 379164 140290711090880 "GET /api/content/blog/?status=published&ordering=-published_at HTTP/1.1" 401 58
+WARNING 2025-10-15 08:46:06,835 log 379164 140290711090880 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-15 08:46:06,836 basehttp 379164 140290711090880 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-15 08:46:07,104 log 379164 140290711090880 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-15 08:46:07,106 basehttp 379164 140290711090880 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-15 10:51:03,774 log 379164 140290711090880 Unauthorized: /api/content/blog/
+WARNING 2025-10-15 10:51:03,775 basehttp 379164 140290711090880 "GET /api/content/blog/?status=published&ordering=-published_at HTTP/1.1" 401 58
+WARNING 2025-10-15 10:51:03,779 log 379164 140290702698176 Unauthorized: /api/content/blog/
+WARNING 2025-10-15 10:51:03,780 basehttp 379164 140290702698176 "GET /api/content/blog/?status=published&ordering=-published_at HTTP/1.1" 401 58
+WARNING 2025-10-15 10:51:04,166 log 379164 140290702698176 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-15 10:51:04,167 basehttp 379164 140290702698176 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-15 10:51:04,272 log 379164 140290702698176 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-15 10:51:04,273 basehttp 379164 140290702698176 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-15 13:35:30,533 log 379164 140290711090880 Unauthorized: /api/content/blog/
+WARNING 2025-10-15 13:35:30,583 basehttp 379164 140290711090880 "GET /api/content/blog/?status=published&ordering=-published_at HTTP/1.1" 401 58
+WARNING 2025-10-15 13:35:30,593 log 379164 140290702698176 Unauthorized: /api/content/blog/
+WARNING 2025-10-15 13:35:30,594 basehttp 379164 140290702698176 "GET /api/content/blog/?status=published&ordering=-published_at HTTP/1.1" 401 58
+WARNING 2025-10-15 13:35:30,827 log 379164 140290702698176 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-15 13:35:30,827 basehttp 379164 140290702698176 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-15 13:35:30,954 log 379164 140290702698176 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-15 13:35:30,954 basehttp 379164 140290702698176 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+INFO 2025-10-15 22:19:20,462 autoreload 12283 139880657489664 Watching for file changes with StatReloader
+WARNING 2025-10-15 22:20:51,761 log 12283 139880321513152 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-15 22:20:51,762 basehttp 12283 139880321513152 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-15 22:20:51,900 log 12283 139880321513152 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-15 22:20:51,901 basehttp 12283 139880321513152 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-15 22:20:53,045 log 12283 139880321513152 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-15 22:20:53,046 basehttp 12283 139880321513152 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-15 22:20:53,140 log 12283 139880321513152 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-15 22:20:53,141 basehttp 12283 139880321513152 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-15 23:01:23,605 log 12283 139880321513152 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-15 23:01:23,606 basehttp 12283 139880321513152 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-15 23:01:23,678 log 12283 139880321513152 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-15 23:01:23,678 basehttp 12283 139880321513152 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-16 02:00:54,342 log 12283 139880321513152 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-16 02:00:54,344 basehttp 12283 139880321513152 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-16 02:00:54,636 log 12283 139880321513152 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-16 02:00:54,638 basehttp 12283 139880321513152 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-16 10:11:38,927 log 12283 139880321513152 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-16 10:11:38,928 basehttp 12283 139880321513152 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-16 10:11:39,070 log 12283 139880321513152 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-16 10:11:39,070 basehttp 12283 139880321513152 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-16 13:30:05,262 log 12283 139880321513152 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-16 13:30:05,263 basehttp 12283 139880321513152 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-16 13:30:05,506 log 12283 139880321513152 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-16 13:30:05,507 basehttp 12283 139880321513152 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-16 13:57:03,500 log 12283 139880321513152 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-16 13:57:03,501 basehttp 12283 139880321513152 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-16 13:57:03,656 log 12283 139880321513152 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-16 13:57:03,658 basehttp 12283 139880321513152 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-16 15:59:29,518 log 12283 139880321513152 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-16 15:59:29,519 basehttp 12283 139880321513152 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
+WARNING 2025-10-16 15:59:29,651 log 12283 139880321513152 Unauthorized: /api/content/portfolio/
+WARNING 2025-10-16 15:59:29,651 basehttp 12283 139880321513152 "GET /api/content/portfolio/?status=active&ordering=order HTTP/1.1" 401 58
