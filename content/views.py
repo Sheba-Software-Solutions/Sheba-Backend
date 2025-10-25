@@ -35,6 +35,10 @@ class BlogPostListCreateView(generics.ListCreateAPIView):
     search_fields = ['title', 'content', 'excerpt']
     ordering_fields = ['created_at', 'published_at', 'views']
     ordering = ['-created_at']
+    
+    def perform_create(self, serializer):
+        # Automatically set the author to the current user
+        serializer.save(author=self.request.user)
 
 class BlogPostDetailView(generics.RetrieveUpdateDestroyAPIView):
     """Retrieve, update or delete a blog post"""
@@ -120,3 +124,45 @@ def content_stats(request):
         'active_services': active_services,
         'team_members': team_members
     })
+
+# Public API Views for Website (No Authentication Required)
+
+class PublicBlogPostListView(generics.ListAPIView):
+    """Public list of published blog posts for website"""
+    queryset = BlogPost.objects.filter(status='published')
+    serializer_class = BlogPostSummarySerializer
+    permission_classes = [permissions.AllowAny]
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_fields = ['category', 'status']
+    search_fields = ['title', 'content', 'excerpt']
+    ordering = ['-published_at', '-created_at']
+
+class PublicPortfolioProjectListView(generics.ListAPIView):
+    """Public list of active portfolio projects for website"""
+    queryset = PortfolioProject.objects.filter(status='active')
+    serializer_class = PortfolioProjectSerializer
+    permission_classes = [permissions.AllowAny]
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_fields = ['category', 'status']
+    search_fields = ['title', 'description']
+    ordering = ['order', '-created_at']
+
+class PublicServiceListView(generics.ListAPIView):
+    """Public list of active services for website"""
+    queryset = Service.objects.filter(status='active')
+    serializer_class = ServiceSerializer
+    permission_classes = [permissions.AllowAny]
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_fields = ['status']
+    search_fields = ['title', 'description']
+    ordering = ['order', 'title']
+
+class PublicTeamMemberListView(generics.ListAPIView):
+    """Public list of active team members for website"""
+    queryset = TeamMember.objects.filter(status='active')
+    serializer_class = TeamMemberSerializer
+    permission_classes = [permissions.AllowAny]
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_fields = ['status']
+    search_fields = ['name', 'position', 'bio']
+    ordering = ['order', 'name']

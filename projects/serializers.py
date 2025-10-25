@@ -71,3 +71,35 @@ class ProjectSummarySerializer(serializers.ModelSerializer):
     
     def get_tasks_count(self, obj):
         return obj.tasks.count()
+
+class PublicProjectSerializer(serializers.ModelSerializer):
+    """Serializer for public website project showcase"""
+    client_name = serializers.CharField(source='client.name', read_only=True)
+    client_company = serializers.CharField(source='client.company', read_only=True)
+    tasks_count = serializers.SerializerMethodField()
+    completed_tasks_count = serializers.SerializerMethodField()
+    team_size = serializers.SerializerMethodField()
+    duration_days = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = Project
+        fields = [
+            'id', 'name', 'description', 'client_name', 'client_company',
+            'status', 'priority', 'progress', 'start_date', 'end_date',
+            'technologies', 'repository_url', 'live_url', 'tasks_count',
+            'completed_tasks_count', 'team_size', 'duration_days', 'created_at'
+        ]
+    
+    def get_tasks_count(self, obj):
+        return obj.tasks.count()
+    
+    def get_completed_tasks_count(self, obj):
+        return obj.tasks.filter(status='completed').count()
+    
+    def get_team_size(self, obj):
+        return obj.assigned_to.count()
+    
+    def get_duration_days(self, obj):
+        if obj.start_date and obj.end_date:
+            return (obj.end_date - obj.start_date).days
+        return None

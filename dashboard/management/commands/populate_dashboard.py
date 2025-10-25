@@ -1,7 +1,8 @@
 from django.core.management.base import BaseCommand
 from django.contrib.auth import get_user_model
+from django.utils import timezone
 from dashboard.models import DashboardMetric, ActivityLog
-from datetime import datetime, timedelta
+from datetime import timedelta
 import random
 
 User = get_user_model()
@@ -88,7 +89,7 @@ class Command(BaseCommand):
                 'model_name': 'Project',
                 'object_id': 1,
                 'description': 'Created new project: E-commerce Platform',
-                'created_at': datetime.now() - timedelta(hours=2)
+                'created_at': timezone.now() - timedelta(hours=2)
             },
             {
                 'user': admin_user,
@@ -96,7 +97,7 @@ class Command(BaseCommand):
                 'model_name': 'Project',
                 'object_id': 2,
                 'description': 'Updated project status to In Progress',
-                'created_at': datetime.now() - timedelta(hours=4)
+                'created_at': timezone.now() - timedelta(hours=4)
             },
             {
                 'user': admin_user,
@@ -104,7 +105,7 @@ class Command(BaseCommand):
                 'model_name': 'Client',
                 'object_id': 3,
                 'description': 'Added new client: TechStart Solutions',
-                'created_at': datetime.now() - timedelta(hours=6)
+                'created_at': timezone.now() - timedelta(hours=6)
             },
             {
                 'user': admin_user,
@@ -112,7 +113,7 @@ class Command(BaseCommand):
                 'model_name': 'User',
                 'object_id': admin_user.id,
                 'description': 'Updated user profile information',
-                'created_at': datetime.now() - timedelta(hours=8)
+                'created_at': timezone.now() - timedelta(hours=8)
             },
             {
                 'user': admin_user,
@@ -120,7 +121,7 @@ class Command(BaseCommand):
                 'model_name': 'BlogPost',
                 'object_id': 1,
                 'description': 'Published new blog post: Web Development Trends 2024',
-                'created_at': datetime.now() - timedelta(days=1)
+                'created_at': timezone.now() - timedelta(days=1)
             },
             {
                 'user': admin_user,
@@ -128,7 +129,7 @@ class Command(BaseCommand):
                 'model_name': 'ContactSubmission',
                 'object_id': 5,
                 'description': 'Resolved and archived contact submission',
-                'created_at': datetime.now() - timedelta(days=1, hours=3)
+                'created_at': timezone.now() - timedelta(days=1, hours=3)
             },
             {
                 'user': admin_user,
@@ -136,7 +137,7 @@ class Command(BaseCommand):
                 'model_name': 'Project',
                 'object_id': 4,
                 'description': 'Marked project as completed',
-                'created_at': datetime.now() - timedelta(days=2)
+                'created_at': timezone.now() - timedelta(days=2)
             },
             {
                 'user': admin_user,
@@ -144,7 +145,7 @@ class Command(BaseCommand):
                 'model_name': 'Newsletter',
                 'object_id': 2,
                 'description': 'Created monthly newsletter campaign',
-                'created_at': datetime.now() - timedelta(days=3)
+                'created_at': timezone.now() - timedelta(days=3)
             },
             {
                 'user': admin_user,
@@ -152,7 +153,7 @@ class Command(BaseCommand):
                 'model_name': 'Service',
                 'object_id': 2,
                 'description': 'Updated service pricing and features',
-                'created_at': datetime.now() - timedelta(days=4)
+                'created_at': timezone.now() - timedelta(days=4)
             },
             {
                 'user': admin_user,
@@ -160,7 +161,7 @@ class Command(BaseCommand):
                 'model_name': 'TeamMember',
                 'object_id': 4,
                 'description': 'Added new team member: Senior Developer',
-                'created_at': datetime.now() - timedelta(days=5)
+                'created_at': timezone.now() - timedelta(days=5)
             }
         ]
 

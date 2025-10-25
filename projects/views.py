@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter, OrderingFilter
 from .models import Project, ProjectTask
-from .serializers import ProjectSerializer, ProjectTaskSerializer, ProjectSummarySerializer
+from .serializers import ProjectSerializer, ProjectTaskSerializer, ProjectSummarySerializer, PublicProjectSerializer
 
 class ProjectListCreateView(generics.ListCreateAPIView):
     """List all projects or create a new project"""
@@ -78,3 +78,15 @@ def project_stats(request):
         'on_hold_projects': on_hold_projects,
         'completion_rate': round((completed_projects / total_projects * 100) if total_projects > 0 else 0, 2)
     })
+
+# Public API Views for Website (No Authentication Required)
+
+class PublicProjectListView(generics.ListAPIView):
+    """Public list of completed projects for website showcase"""
+    queryset = Project.objects.filter(status='completed').select_related('client').prefetch_related('assigned_to')
+    serializer_class = PublicProjectSerializer
+    permission_classes = [permissions.AllowAny]
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_fields = ['status', 'priority']
+    search_fields = ['name', 'description']
+    ordering = ['-end_date', '-created_at']

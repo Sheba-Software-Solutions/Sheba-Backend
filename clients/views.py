@@ -85,3 +85,15 @@ def client_stats(request):
         'individual_clients': individual_clients,
         'business_clients': business_clients
     })
+
+# Public API Views for Website (No Authentication Required)
+
+class PublicClientListView(generics.ListAPIView):
+    """Public list of active clients for website testimonials"""
+    queryset = Client.objects.filter(is_active=True)
+    serializer_class = ClientSummarySerializer
+    permission_classes = [permissions.AllowAny]
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_fields = ['client_type', 'is_active']
+    search_fields = ['name', 'company']
+    ordering = ['name']

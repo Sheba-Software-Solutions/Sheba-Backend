@@ -12,7 +12,7 @@ class WebsiteContentSerializer(serializers.ModelSerializer):
 class BlogPostSerializer(serializers.ModelSerializer):
     """Serializer for BlogPost model"""
     author = UserProfileSerializer(read_only=True)
-    author_id = serializers.IntegerField(write_only=True)
+    author_id = serializers.IntegerField(write_only=True, required=False)
     
     class Meta:
         model = BlogPost
@@ -20,6 +20,34 @@ class BlogPostSerializer(serializers.ModelSerializer):
                  'category', 'status', 'featured_image', 'views', 'published_at',
                  'created_at', 'updated_at']
         read_only_fields = ['id', 'views', 'created_at', 'updated_at']
+    
+    def create(self, validated_data):
+        # Set author to current user if not provided
+        if 'author_id' not in validated_data:
+            validated_data['author'] = self.context['request'].user
+        else:
+            validated_data['author_id'] = validated_data.pop('author_id')
+        
+        # Set published_at when status is published
+        if validated_data.get('status') == 'published' and not validated_data.get('published_at'):
+            from django.utils import timezone
+            validated_data['published_at'] = timezone.now()
+        
+        return super().create(validated_data)
+    
+    def update(self, instance, validated_data):
+        # Handle author_id if provided
+        if 'author_id' in validated_data:
+            validated_data['author_id'] = validated_data.pop('author_id')
+        
+        # Set published_at when status changes to published
+        if (validated_data.get('status') == 'published' and 
+            instance.status != 'published' and 
+            not instance.published_at):
+            from django.utils import timezone
+            validated_data['published_at'] = timezone.now()
+        
+        return super().update(instance, validated_data)
 
 class BlogPostSummarySerializer(serializers.ModelSerializer):
     """Lightweight serializer for blog post summaries"""

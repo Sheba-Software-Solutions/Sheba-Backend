@@ -18,4 +18,6 @@ urlpatterns = [
         name="project-task-list-create",
     ),
     path("tasks/<int:pk>/", views.ProjectTaskDetailView.as_view(), name="task-detail"),
+    # Public endpoint for website
+    path("public/", views.PublicProjectListView.as_view(), name="public-project-list"),
 ]

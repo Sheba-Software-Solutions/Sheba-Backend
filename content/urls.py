@@ -27,4 +27,10 @@ urlpatterns = [
     
     # Statistics
     path('stats/', views.content_stats, name='content-stats'),
+    
+    # Public API endpoints for website (no authentication required)
+    path('public/blog/', views.PublicBlogPostListView.as_view(), name='public-blog-list'),
+    path('public/portfolio/', views.PublicPortfolioProjectListView.as_view(), name='public-portfolio-list'),
+    path('public/services/', views.PublicServiceListView.as_view(), name='public-service-list'),
+    path('public/team/', views.PublicTeamMemberListView.as_view(), name='public-team-list'),
 ]

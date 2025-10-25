@@ -10,6 +10,8 @@ urlpatterns = [
     path("summary/", views.ClientSummaryListView.as_view(), name="client-summary"),
     path("stats/", views.client_stats, name="client-stats"),
     path("statistics/", views.client_stats, name="client-statistics"),
+    # Public endpoint for website
+    path("public/", views.PublicClientListView.as_view(), name="public-client-list"),
     # Client Contacts
     path(
         "contacts/",

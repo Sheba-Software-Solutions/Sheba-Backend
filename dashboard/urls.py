@@ -16,4 +16,5 @@ urlpatterns = [
     
     # Dashboard Overview
     path('overview/', views.dashboard_overview, name='dashboard-overview'),
+    path('combined/', views.dashboard_combined, name='dashboard-combined'),
 ]
