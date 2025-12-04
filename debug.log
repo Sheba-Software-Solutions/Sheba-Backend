@@ -2077,3 +2077,4 @@ INFO 2025-10-26 11:37:12,560 basehttp 18666 140081809577664 "GET /api/content/pu
 INFO 2025-10-26 11:37:12,600 basehttp 18666 140081826363072 "GET /api/projects/public/?status=completed&ordering=-end_date HTTP/1.1" 200 2581
 INFO 2025-10-26 11:39:50,403 basehttp 18666 140081809577664 "GET /api/content/public/team/?status=active&ordering=order HTTP/1.1" 200 1500
 INFO 2025-10-26 11:39:50,419 basehttp 18666 140081809577664 "GET /api/content/public/team/?status=active&ordering=order HTTP/1.1" 200 1500
+INFO 2025-10-27 22:12:31,496 autoreload 55717 140500826693376 Watching for file changes with StatReloader
